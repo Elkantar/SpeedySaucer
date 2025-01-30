@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://fwhols2kxky0"]
+
+[ext_resource type="Texture2D" uid="uid://bw2lovcdsl61h" path="res://speedy_saucer_assets/purple.png" id="1_8d4tr"]
+[ext_resource type="Script" path="res://script/level.gd" id="1_d3et1"]
+[ext_resource type="PackedScene" uid="uid://bt1ljoy3ye5hh" path="res://player.tscn" id="2_qgk8y"]
+[ext_resource type="PackedScene" uid="uid://d3ve1nca1kih6" path="res://maze.tscn" id="3_ce72m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tor6n"]
+font_size = 71
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjwga"]
+font_size = 21
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_d3et1")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -89
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+z_index = -100
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_8d4tr")
+stretch_mode = 1
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 330.0
+offset_top = 534.0
+offset_right = 541.0
+offset_bottom = 631.0
+text = "END"
+label_settings = SubResource("LabelSettings_tor6n")
+
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 42.0
+offset_top = 24.0
+offset_right = 253.0
+offset_bottom = 121.0
+text = "START"
+label_settings = SubResource("LabelSettings_tor6n")
+
+[node name="TutorialLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 436.0
+offset_top = 4.0
+offset_right = 666.0
+offset_bottom = 273.0
+text = "Don't cross the border
+Move :
+Arrows Keys
+or ZQSD"
+label_settings = SubResource("LabelSettings_wjwga")
+
+[node name="Area2D" parent="." instance=ExtResource("3_ce72m")]
+z_index = -15
+position = Vector2(2, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_qgk8y")]
+position = Vector2(344, 70)
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
