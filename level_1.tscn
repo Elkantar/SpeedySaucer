@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ve1nca1kih6" path="res://maze.tscn" id="3_ce72m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tor6n"]
-font_size = 71
+font_size = 86
 
 [sub_resource type="LabelSettings" id="LabelSettings_wjwga"]
 font_size = 21
@@ -28,10 +28,10 @@ stretch_mode = 1
 
 [node name="EndLabel" type="Label" parent="Graphics"]
 z_index = -5
-offset_left = 330.0
-offset_top = 534.0
-offset_right = 541.0
-offset_bottom = 631.0
+offset_left = 2024.0
+offset_top = 1310.0
+offset_right = 2235.0
+offset_bottom = 1428.0
 text = "END"
 label_settings = SubResource("LabelSettings_tor6n")
 
@@ -53,14 +53,28 @@ offset_bottom = 273.0
 text = "Don't cross the border
 Move :
 Arrows Keys
-or ZQSD"
+or ZQSD
+
+Difficulty : 
+1) 1 or & (speed x1)
+2) 2 or é (speed x4)"
 label_settings = SubResource("LabelSettings_wjwga")
 
 [node name="Area2D" parent="." instance=ExtResource("3_ce72m")]
 z_index = -15
-position = Vector2(2, 4)
+position = Vector2(0, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_qgk8y")]
-position = Vector2(344, 70)
+position = Vector2(340, 81)
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(1865, 1232, 2457, 1200, 2473, 1496, 1873, 1510)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
+visible = false
+polygon = PackedVector2Array(1865, 1232, 2457, 1200, 2473, 1496, 1873, 1510)
 
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
