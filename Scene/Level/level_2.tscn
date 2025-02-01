@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://du1i5f7wyysgx"]
+
+[ext_resource type="Script" path="res://script/level.gd" id="1_4q7vr"]
+[ext_resource type="Texture2D" uid="uid://bw2lovcdsl61h" path="res://speedy_saucer_assets/purple.png" id="2_3kr3c"]
+[ext_resource type="PackedScene" uid="uid://bt1ljoy3ye5hh" path="res://Scene/player.tscn" id="4_235r5"]
+[ext_resource type="PackedScene" uid="uid://4gbxt5bhharm" path="res://Scene/maze/maze2.tscn" id="5_38as1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tor6n"]
+font_size = 86
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjwga"]
+font_size = 21
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_4q7vr")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -89
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+z_index = -100
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_3kr3c")
+stretch_mode = 1
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 1799.0
+offset_top = 165.0
+offset_right = 2010.0
+offset_bottom = 283.0
+text = "END"
+label_settings = SubResource("LabelSettings_tor6n")
+
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 42.0
+offset_top = 24.0
+offset_right = 253.0
+offset_bottom = 121.0
+text = "START"
+label_settings = SubResource("LabelSettings_tor6n")
+
+[node name="TutorialLabel" type="Label" parent="Graphics"]
+z_index = -5
+offset_left = 436.0
+offset_top = 4.0
+offset_right = 666.0
+offset_bottom = 273.0
+text = "Don't cross the border
+Move :
+Arrows Keys
+or ZQSD
+
+Difficulty : 
+1) 1 or & (speed x1)
+2) 2 or é (speed x4)"
+label_settings = SubResource("LabelSettings_wjwga")
+
+[node name="Area2D2" parent="." instance=ExtResource("5_38as1")]
+z_index = -10
+
+[node name="Player" parent="." instance=ExtResource("4_235r5")]
+position = Vector2(216, 76)
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D3"]
+polygon = PackedVector2Array(1797, 27, 2005, 29, 2013, 414, 1805, 414)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D3"]
+visible = false
+polygon = PackedVector2Array(1865, 1232, 2457, 1200, 2473, 1496, 1873, 1510)
+
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
