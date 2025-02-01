@@ -7,7 +7,7 @@
 ## Objective 
     
   Navigate through the maze without crossing its borders.
-  ![image](image/Start1.png)
+  ![Image](Image/Start1.png)
 
 ## Control 
 
