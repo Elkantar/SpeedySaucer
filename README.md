@@ -1,9 +1,5 @@
 # Speedy Saucer
 
-  Download the game here :  
-  [Speedy Saucer(Window)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_Win.zip)  
-	[Speedy Saucer(Linux)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_linux.zip)
-
   This game was create by following the course on gamedev.tv "Complete Godot 4 2D: Code Your Own 2D Games In Godot 4!"
 
 ## Objective 
@@ -24,4 +20,6 @@
 ## Available 
      Windows
      Linux
-
+## Download  
+  [Speedy Saucer(Window)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_Win.zip)  
+	[Speedy Saucer(Linux)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_linux.zip)
