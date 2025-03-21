@@ -1,39 +1,48 @@
-# Speedy Saucer
+# **Speedy Saucer**  
 
-  This game was create by following the course on gamedev.tv "Complete Godot 4 2D: Code Your Own 2D Games In Godot 4!"
+This game was created by following the **GameDev.tv** course:  
+🎓 *"Complete Godot 4 2D: Code Your Own 2D Games In Godot 4!"*  
 
-## Objective 
-    
-  Navigate through the maze without crossing its borders.
-  ![Image](Image/Start1.png)
+![Game Screenshot](Image/Start1.png)  
 
-## Control 
+---  
 
-### Movement 
-    Arrow Key
-    ZQSD
+## 🚀 **Objective**  
 
-### Difficulty 
-    & or 1 = Speed x1
-    é or 2 = Speed x4
+Navigate through the maze **without crossing its borders**.  
 
-## Available 
-     Windows
-     Linux
-## Download  
-  [Speedy Saucer(Window)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_Win.zip)  
-	[Speedy Saucer(Linux)](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_linux.zip)
+---  
 
- ## linux 
+## 🎮 **Controls**  
 
- Giving Permissions to Run the Game
+### **Movement**  
+- **Arrow Keys** / **ZQSD**  
 
-Before you can run the game, you'll need to give the executable file proper permissions. You can do this by using the following command in your terminal:
-````
+### **Difficulty Settings**  
+- `&` or `1` → **Speed x1**  
+- `é` or `2` → **Speed x4**  
+
+---  
+
+## 📥 **Download**  
+
+✅ **Available for**: **Windows** & **Linux**  
+
+🔗 **[Download for Windows](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_Win.zip)**  
+🔗 **[Download for Linux](https://github.com/Elkantar/SpeedySaucer/releases/download/Update_1.0.2/Speedy_Saucer_linux.zip)**  
+
+---  
+
+## 🐧 **Linux Setup**  
+
+Before running the game, you need to grant execution permissions:  
+
+```bash
 chmod +x Speedy_Saucer.x86_64
+
 ````
 This command grants execute permissions to the file, allowing it to be run as a program. After running this command, you can execute the game by using the following:
 ````
 ./Speedy_Saucer.x86_64
 ````
-Make sure you're in the correct directory where the game file is located, or provide the full path to the executable.
+📌 Make sure you're in the correct directory where the file is located, or provide the full path to the executable.
